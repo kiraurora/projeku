@@ -1,1 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Selamat Datang — Projeku</title>
+  <meta name="description" content="Halaman selamat datang untuk Projeku">
+  <style>
+    :root{--bg1:#6a11cb;--bg2:#2575fc;--card:#ffffffbb;--accent:#ffdd57}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#07203a}
+    .card{width:min(920px,94%);background:var(--card);border-radius:16px;padding:40px;box-shadow:0 10px 30px rgba(2,6,23,0.25);backdrop-filter:blur(6px);}
+    .hero{display:flex;gap:28px;align-items:center}
+    .logo{width:96px;height:96px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#ff7b9c);display:flex;align-items:center;justify-content:center;font-size:42px}
+    h1{margin:0 0 8px 0;font-size:28px}
+    p.lead{margin:0 0 18px 0;color:#05314a}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    a.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;color:#07203a;background:#fff}
+    a.btn.primary{background:#07203a;color:#fff}
+    footer{margin-top:18px;font-size:13px;color:#083247}
+    @media (max-width:720px){.hero{flex-direction:column;text-align:center}.logo{width:80px;height:80px}}
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="hero">
+      <div class="logo" aria-hidden>✦</div>
+      <div>
+        <h1>Selamat Datang di Projeku!</h1>
+        <p class="lead">Terima kasih telah mampir — ini adalah tempat untuk menyimpan dan memperlihatkan proyek-proyek saya. Silakan jelajahi atau hubungi saya jika ingin berkolaborasi.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Jelajahi Proyek</a>
+          <a class="btn" href="mailto:kira@example.com">Kontak</a>
+        </div>
+        <footer id="greeting">Memuat salam...</footer>
+      </div>
+    </div>
 
+    <section id="projects" style="margin-top:26px">
+      <h2 style="margin:0 0 8px 0">Tentang</h2>
+      <p style="margin:0;color:#05314a">Halaman ini dibuat sebagai contoh halaman selamat datang. Anda dapat menyesuaikannya dengan menambahkan tautan ke repositori, portofolio, atau dokumentasi.</p>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const now=new Date();
+      const h=now.getHours();
+      let s='Selamat Datang';
+      if(h>=4 && h<11) s='Selamat Pagi';
+      else if(h>=11 && h<15) s='Selamat Siang';
+      else if(h>=15 && h<18) s='Selamat Sore';
+      else s='Selamat Malam';
+      document.getElementById('greeting').textContent = s + ' — ' + now.toLocaleString();
+    })();
+  </script>
+</body>
+</html>
